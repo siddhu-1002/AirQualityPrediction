@@ -24,13 +24,13 @@ def  insertvalues():
         year = request.form.get("year")
         month = request.form.get("month")
         day  = request.form.get("day")
-        Time = request.form.get("Time")
-        CO   =  request.form.get("CO")
-        PT08  = request.form.get("PT08")
-        NMHC  =  request.form.get("NMHC")
+        time = request.form.get("Time")
+        co   =  request.form.get("CO")
+        pt08  = request.form.get("PT08")
+        nmhc  =  request.form.get("NMHC")
 
         try:
-            pred = model.predict([[year, month, day, Time, CO, PT08, NMHC]])[0]
+            pred = model.predict([[year, month, day, time, co, pto8, nmhc]])[0]
         except ValueError:
             pred = "Enter the values"
 
