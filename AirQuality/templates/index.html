@@ -10,12 +10,12 @@
 
 
 <center>
-<h1>Air Quality Prediction</h1>
-<h6>Developed by Shivu and Siddhu</h6>
+<h1>Air Humidity Prediction</h1>
+<h6>Developed by Shivananda Sonawane and Siddhesh Gudghe</h6>
 <form method="POST">
     <div class="form-group w-50 p-3">
         <label for="text">year:</label>
-        <input type="text" class="form-control" name="year" placeholder="Enter year" id="email">
+        <input type="text" class="form-control" name="year" placeholder="Enter either 2004 or 2005" id="email">
     </div>
     <div class="form-group w-50 p-3">
         <label for="text">month:</label>
@@ -27,24 +27,24 @@
     </div>
     <div class="form-group w-50 p-3">
         <label for="text">time:</label>
-        <input type="text" class="form-control" name="time" placeholder=" Enter time " id="month">
+        <input type="text" class="form-control" name="time" placeholder=" Enter 1 for morning, 2 for evening, 3 for night" id="month">
     </div>
     <div class="form-group w-50 p-3">
         <label for="text">CO:</label>
-        <input type="text" class="form-control" name="co" placeholder="Enter CO " id="month">
+        <input type="text" class="form-control" name="co" placeholder="Enter Carbon monoxide value between 0 to 10" id="month">
     </div>
     <div class="form-group w-50 p-3">
         <label for="text ">PT08:</label>
-        <input type="text" class="form-control " name="pt08" placeholder="Enter PTO8" id="month">
+        <input type="text" class="form-control " name="pt08" placeholder="Enter tin oxide between 500 to 2000" id="month">
     </div>
 
     <div class="form-group w-50 p-3">
         <label for="text">NMHC:</label>
-        <input type="text" class="form-control" name="nmhc" placeholder="Enter NMHC" id="month">
+        <input type="text" class="form-control" name="nmhc" placeholder="Enter non metallic hydro carbon conc. between 0 to 1000" id="month">
     </div>
 
       <p>
-    <h3>Predicted air quality is :</h3><h5><strong>{{predictions}}</strong></h5>
+    <h3>Predicted air humidity is :</h3><h5><strong>{{predictions}}</strong></h5>
     </p>
 
 
