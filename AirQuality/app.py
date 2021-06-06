@@ -29,7 +29,7 @@ def  insertvalues():
         pt08  = request.form.get("PT08")
         nmhc  =  request.form.get("NMHC")
 
-        pred = model.predict([[year, month, day, time, co, pt08, nmhc]])[0]
+        pred = model.predict([[year, month, day, time, co, pt08, nmhc]])
 
     return render_template("index.html", predictions = pred)
 
