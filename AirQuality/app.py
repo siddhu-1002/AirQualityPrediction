@@ -28,8 +28,11 @@ def  insertvalues():
         co   =  request.form.get("co")
         pt08  = request.form.get("pt08")
         nmhc  =  request.form.get("nmhc")
-
-        pred = model.predict([[year, month, day, time, co, pt08, nmhc]])
+        
+        try:
+            pred = model.predict([[year, month, day, time, co, pt08, nmhc]])
+        except ValueError:
+            pred = "Enter the values"
 
     return render_template("index.html", predictions = pred)
 
