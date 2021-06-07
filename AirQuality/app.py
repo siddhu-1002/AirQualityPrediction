@@ -11,7 +11,7 @@ app = Flask(__name__)                    # Named the app
 # db = SQLAlchemy(app) # new
 
 model = joblib.load("air_quality.pickle")
-pred = None
+pred = ""
 
 
 @app.route("/", methods =["GET","POST"] )
