@@ -36,7 +36,7 @@ def  insertvalues():
             if vals is None:
                 pred = "Enter all the values"
             else:
-                pred = model.predict([[year, month, day, time, co, ben, nox, no2, pt08]])[0]
+                pred = round(model.predict([[year, month, day, time, co, ben, nox, no2, pt08]])[0], 3)
 
     return render_template("index.html", predictions = pred)
 
