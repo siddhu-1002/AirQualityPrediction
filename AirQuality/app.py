@@ -27,12 +27,16 @@ def  insertvalues():
         time = request.form.get("time")
         co   =  request.form.get("co")
         pt08  = request.form.get("pt08")
-        nmhc  =  request.form.get("nmhc")
+        ben = request.form.get("Benzene")
+        nox = request.form.get("NOx")
+        no2 = request.form.get("NO2")
         
-        try:
-            pred = model.predict([[year, month, day, time, co, pt08, nmhc]])[0]
-        except ValueError:
-            pred = "Enter the values"
+        params = [year, month, day, time, co, ben, nox, no2, pt08]
+        for vals in params:
+            if vals is None:
+                pred = "Enter all the values"
+            else:
+                pred = model.predict([[year, month, day, time, co, ben, nox, no2, pt08]])[0]
 
     return render_template("index.html", predictions = pred)
 
