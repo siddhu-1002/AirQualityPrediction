@@ -1,5 +1,5 @@
 from flask import  Flask ,request ,render_template
-import joblib
+import pickle
 import numpy as np
 import pandas as pd
 import sklearn
@@ -10,7 +10,7 @@ app = Flask(__name__)                    # Named the app
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db' # new
 # db = SQLAlchemy(app) # new
 
-model = joblib.load("air_quality.pickle")
+model = pickle.load(open("airquality.pkl", 'rb'))
 pred = ""
 
 
