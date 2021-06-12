@@ -36,7 +36,7 @@ def  insertvalues():
         params = [year, month, day, time, co, ben, nox, no2, pt08]
         try :
             pred = round(model.predict([[year, month, day, time, co, ben, nox, no2, pt08]])[0], 3)
-            if pred:
+            if pred != "":
                 return render_template("index.html", predictions = pred)
         except Exception:
             err = "Enter all the values"
