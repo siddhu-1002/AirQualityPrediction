@@ -32,11 +32,10 @@ def  insertvalues():
         no2 = request.form.get("NO2")
         
         params = [year, month, day, time, co, ben, nox, no2, pt08]
-        for vals in params:
-            if vals is None:
-                pred = "Enter all the values"
-            else:
-                pred = round(model.predict([[year, month, day, time, co, ben, nox, no2, pt08]])[0], 3)
+        try :
+            pred = round(model.predict([[year, month, day, time, co, ben, nox, no2, pt08]])[0], 3)
+        except Exception:
+            pred = "Enter all the values"
 
     return render_template("index.html", predictions = pred)
 
