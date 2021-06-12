@@ -12,12 +12,14 @@ app = Flask(__name__)                    # Named the app
 
 model = pickle.load(open("airquality.pkl", 'rb'))
 pred = ""
+err = ""
 
 
 @app.route("/", methods =["GET","POST"] )
 def  insertvalues():
 
     global pred
+    global err
 
     if request.method == "POST":
 
@@ -34,8 +36,13 @@ def  insertvalues():
         params = [year, month, day, time, co, ben, nox, no2, pt08]
         try :
             pred = round(model.predict([[year, month, day, time, co, ben, nox, no2, pt08]])[0], 3)
+            if pred:
+                return render_template("index.html", predictions = pred)
         except Exception:
-            pred = "Enter all the values"
+            err = "Enter all the values"
+            if err != "":
+                return render_template("index.html", errors = err)
+
 
     return render_template("index.html", predictions = pred)
 
